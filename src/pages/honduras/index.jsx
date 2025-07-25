@@ -1,42 +1,51 @@
-import { useState } from "react";
-import { useRef } from "react";
-import gsap from "gsap";
+import React, { useRef } from "react";
 import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import CarmenHero from "./assets/carmen-hero.jpg";
 import Section from "../../components/Section";
-import { Link } from "react-router-dom";
 
-export default function Carmen() {
-  const containerRef = useRef();
-  const [count, setCount] = useState(0);
+gsap.registerPlugin(ScrollTrigger);
 
-  useGSAP(
-    () => {
-      gsap.to(boxRef.current, {
-        x: 100 + count,
-        duration: 3,
-        delay: 1,
-      });
-    },
-    { dependencies: [count], scope: containerRef }
-  );
+const Carmen = () => {
+    const imageRef = useRef(null);
 
-  const boxRef = useRef();
+    useGSAP(() => {
+        gsap.to(imageRef.current, {
+            width: "100vw",
+            scale: 1.5,
+            scrollTrigger: {
+                trigger: imageRef.current,
+                start: "top 25%",
+                end: "bottom top",
+                scrub: true,
+                pin: true,
+                markers: true, // Remove in production
+            },
+        });
+    }, []);
 
-  return (
-    <Section className="text-white flex flex-col justify-center align-middle" ref={containerRef}>
+    return (
+        <Section className="hero-section text-white min-h-[200vh]">
 
-      <div className="py-40 flex flex-col items-center">
-        <h1 className="text-2xl font-bold">Carmen</h1>
-        <Link to="/" className="text-blue-500 underline">
-          Back to Landing Page
-        </Link>
-      </div>
+            <div className="min-h-[100vh] flex flex-col justify-center align-middle" >
+                <div className="image-scroll flex justify-center relative" >
+                    <img
+                    ref={imageRef}
+                        src={CarmenHero}
+                        alt="Carmen Hero"
+                        className="max-w-2xl rounded-lg shadow-lg"
+                    />
+                    <div className="absolute inset-0 flex flex-col items-center justify-center p-4">
+                        <h1 className="text-2xl font-bold">Carmen</h1>
+                        <p>
+                            Una pequeña agricultora de frijol en Catacamas, Honduras
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </Section>
+    );
+};
 
-      <div
-        ref={boxRef}
-        className="box bg-blue-500 w-32 h-32 rounded shadow"
-      >
-      </div>
-    </Section>
-  );
-}
+export default Carmen;

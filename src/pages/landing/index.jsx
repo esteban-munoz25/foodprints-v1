@@ -13,6 +13,9 @@ const LandingPage = () => (
             <Link to="/honduras" className="text-blue-500 underline">
                 Explore Honduras
             </Link>
+            <Link to="/salvador" className="text-blue-500 underline ml-4">
+                Explore El Salvador
+            </Link>
 
         </div>
     </Section>
