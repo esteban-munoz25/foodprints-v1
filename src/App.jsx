@@ -1,7 +1,3 @@
-import { useState } from "react";
-import { useRef } from "react";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./layout/header";
 import Carmen from "./pages/honduras";

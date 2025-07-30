@@ -1,4 +1,4 @@
-nav {
+/* nav {
   position: fixed;
   top: 10px;
   right: 10px;
@@ -62,4 +62,29 @@ h1, h2, p, li {
   bottom:auto;
   top:6vh;
   position:relative;
+} */
+
+.bar {
+  width: 80vw;
+  border: 2px dashed var(--mid);
+  border-radius: 10px;
+  padding: 8px;
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+}
+.amount {
+  margin: 20px;
+  font-size: 36px;
+}
+
+.box {
+  flex-grow: 1;
+}
+
+.green-box {
+  background-color: green;
+  height: 50px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.3);
 }
