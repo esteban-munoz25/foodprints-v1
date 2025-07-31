@@ -8,6 +8,7 @@ import "./assets/progressBar.css"; // Assuming you have a CSS file for the progr
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import ZoomOutGallery from "../../components/zoomOutGallery";
 import "../../assets/zoomOut.css";
+import VirtualEXP from "../../components/VirtualEXP";
 
 // SCROLL PENS https://codepen.io/GreenSock/pen/xxaPojz
 // https://codepen.io/GreenSock/pen/xxjErmp
@@ -250,6 +251,8 @@ const Carmen = () => {
           </div>
           <div className="amount">$0.00</div>
         </div>
+
+        <VirtualEXP/>
       </Section>
     </>
   );
