@@ -6,14 +6,22 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "build:analyze": "vite build --mode analyze",
+    "build:cdn": "vite build --config vite.config.cdn.js",
+    "preview": "vite preview",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "lint:fix": "eslint . --fix",
+    "clean": "rimraf dist",
+    "build:clean": "npm run clean && npm run build"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
     "@splinetool/react-spline": "^4.1.0",
     "@tailwindcss/vite": "^4.1.11",
     "@wfp/icons": "^0.2.2",
+    "@wfp/icons-react": "^10.38.0",
+    "@wfp/react": "^1.22.0",
+    "@wfp/styles": "^10.30.0",
     "@wfp/ui": "^1.22.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -31,7 +39,9 @@
     "eslint-plugin-react-refresh": "^0.4.20",
     "globals": "^16.3.0",
     "postcss": "^8.5.6",
+    "rimraf": "^5.0.5",
     "tailwindcss": "^4.1.11",
+    "terser": "^5.43.1",
     "vite": "^7.0.4"
   }
 }

@@ -5,7 +5,6 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import Button from '../../components/ui/button';
 import HeroPhoto from "./assets/hero.jpg"
-// import {iconArrowRight} from '@wfp/icons';
 // import ZoomOutGallery from '../../components/zoomOutGallery';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -62,7 +61,7 @@ function Wendy() {
     </div>
     <div>
       <div className="flex w-full h-full justify-center align-center">
-        <Button id="give-now" title="Give Now!"  containerClass="bg-red-300 flex-enter gap-1"/>
+        <Button id="give-now" title="Give Now!"  containerClass="bg-red-300 flex-enter gap-1" />
       </div>
     </div>
     </>

@@ -2,19 +2,16 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 
-// https://vite.dev/config/
+// CDN-specific configuration
 export default defineConfig({
   plugins: [react(), tailwindcss()],
 
-  // Build configuration for production
+  // Build configuration for CDN deployment
   build: {
-    // Output directory for the build
     outDir: "dist",
-
-    // Generate source maps for debugging (optional for production)
     sourcemap: false,
 
-    // Optimize chunk size
+    // Optimize chunk size for CDN
     rollupOptions: {
       output: {
         // Split vendor chunks for better caching
@@ -31,11 +28,11 @@ export default defineConfig({
           ],
         },
 
-        // Optimize asset file names
+        // Optimize asset file names for CDN
         assetFileNames: (assetInfo) => {
           const info = assetInfo.name.split(".");
           const ext = info[info.length - 1];
-          if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(ext)) {
+          if (/png|jpe?g|svg|gif|tiff|bmp|ico|webp/i.test(ext)) {
             return `assets/images/[name]-[hash][extname]`;
           }
           if (/css/i.test(ext)) {
@@ -50,46 +47,33 @@ export default defineConfig({
       },
     },
 
-    // Optimize build size
+    // Production minification
     minify: "terser",
     terserOptions: {
       compress: {
-        drop_console: true, // Remove console.log in production
+        drop_console: true,
         drop_debugger: true,
+        pure_funcs: ["console.log", "console.info", "console.debug"],
+      },
+      mangle: {
+        safari10: true,
       },
     },
 
     // Asset optimization
-    assetsInlineLimit: 4096, // Inline assets smaller than 4kb
+    assetsInlineLimit: 4096,
+    chunkSizeWarningLimit: 1000,
   },
 
-  // Base public path for CDN deployment
-  // For CDN: Change this to your CDN URL (e.g., 'https://your-cdn.com/foodprints/')
-  // For local: Keep as './'
-  base: "./",
+  // Base path for CDN - UPDATE THIS TO YOUR CDN URL
+  // Examples:
+  // base: 'https://your-cdn.com/foodprints/',
+  // base: 'https://cdn.example.com/assets/foodprints/',
+  // base: 'https://static.yourdomain.com/',
+  base: "https://your-cdn-url.com/foodprints/",
 
-  // Development server configuration
-  server: {
-    port: 3000,
-    open: true,
-  },
-
-  // Preview server configuration
-  preview: {
-    port: 4173,
-    open: true,
-  },
-
-  // Optimize dependencies
-  optimizeDeps: {
-    include: [
-      "react",
-      "react-dom",
-      "react-router-dom",
-      "gsap",
-      "@gsap/react",
-      "@wfp/react",
-      "@wfp/ui",
-    ],
+  // Environment variables for CDN
+  define: {
+    "process.env.NODE_ENV": '"production"',
   },
 });
