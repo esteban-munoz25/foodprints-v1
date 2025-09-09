@@ -66,7 +66,7 @@ export default defineConfig({
   // Base public path for CDN deployment
   // For CDN: Change this to your CDN URL (e.g., 'https://your-cdn.com/foodprints/')
   // For local: Keep as './'
-  base: "./",
+  base: "/foodprints-v1",
 
   // Development server configuration
   server: {
