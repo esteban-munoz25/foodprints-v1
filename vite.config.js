@@ -69,10 +69,10 @@ export default defineConfig({
   base: "/foodprints-v1",
 
   // Development server configuration
-  // server: {
-  //   port: 3000,
-  //   open: true,
-  // },
+  server: {
+    port: 3000,
+    open: true,
+  },
 
   // Preview server configuration
   preview: {
