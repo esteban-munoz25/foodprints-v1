@@ -27,7 +27,6 @@ export default defineConfig({
             "@wfp/ui",
             "@wfp/icons",
             "@wfp/icons-react",
-            "@wfp/styles",
           ],
         },
 
