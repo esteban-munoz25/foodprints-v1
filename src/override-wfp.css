@@ -1,0 +1,41 @@
+/* Override WFP reset styles to ensure Tailwind utilities work */
+#root * {
+  margin: revert;
+  padding: revert;
+}
+
+/* Ensure Tailwind margin and padding utilities take precedence */
+#root .mb-4 {
+  margin-bottom: 1rem !important;
+}
+
+#root .mb-6 {
+  margin-bottom: 1.5rem !important;
+}
+
+#root .ml-4 {
+  margin-left: 1rem !important;
+}
+
+#root .p-4 {
+  padding: 1rem !important;
+}
+
+#root .px-7 {
+  padding-left: 1.75rem !important;
+  padding-right: 1.75rem !important;
+}
+
+#root .py-3 {
+  padding-top: 0.75rem !important;
+  padding-bottom: 0.75rem !important;
+}
+
+#root .py-10 {
+  padding-top: 2.5rem !important;
+  padding-bottom: 2.5rem !important;
+}
+
+#root .pt-\[1\.75rem\] {
+  padding-top: 1.75rem !important;
+}

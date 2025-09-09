@@ -92,4 +92,11 @@ export default defineConfig({
       "@wfp/ui",
     ],
   },
+
+  // CSS configuration to ensure Tailwind loads after WFP styles
+  css: {
+    postcss: {
+      plugins: [],
+    },
+  },
 });
