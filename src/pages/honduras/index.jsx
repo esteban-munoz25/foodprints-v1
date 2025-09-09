@@ -131,7 +131,7 @@ const Carmen = () => {
   }, []);
 
   return (
-    <>
+    <div className="px-136">
       <Section className="hero-section text-white " ref={containerRef}>
         {/* HERO SECTION  */}
         <div className="min-h-[150vh]">
@@ -193,7 +193,7 @@ const Carmen = () => {
         </div>
 
       </Section>
-    </>
+    </div>
   );
 };
 

@@ -72,7 +72,7 @@ export default function Haydee() {
 
   return (
     // This is the main container GSAP will scope to
-    <>
+    <div className="px-136">
       {/* <section className="revealer">
         <div className="img-mask">
           <img
@@ -119,6 +119,6 @@ export default function Haydee() {
       </section>
 
       {/* <Responsive /> */}
-    </>
+    </div>
   );
 }

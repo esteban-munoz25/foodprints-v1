@@ -10,6 +10,9 @@ export default {
       fontFamily: {
         sans: ["IBM Plex Sans", "system-ui", "sans-serif"],
       },
+      spacing: {
+        '136': '136px',
+      },
     },
   },
   plugins: [],

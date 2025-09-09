@@ -40,7 +40,7 @@ function Wendy() {
   }, []);
 
   return (
-    <>
+    <div className="px-136">
     <div ref={sectionRef}>
       <section className="container hero">
         <div className="hero__inner">
@@ -64,7 +64,7 @@ function Wendy() {
         <Button id="give-now" title="Give Now!"  containerClass="bg-red-300 flex-enter gap-1" />
       </div>
     </div>
-    </>
+    </div>
   );
 }
 
