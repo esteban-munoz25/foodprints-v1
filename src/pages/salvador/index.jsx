@@ -72,7 +72,7 @@ export default function Haydee() {
 
   return (
     // This is the main container GSAP will scope to
-    <div className="px-136">
+    <div >
       {/* <section className="revealer">
         <div className="img-mask">
           <img
@@ -112,7 +112,7 @@ export default function Haydee() {
           allowFullScreen
           style={{
             maxWidth: "75%",
-            maxHeight: "50%",
+            maxHeight: "75%",
             aspectRatio: "16/9",
           }}
         ></iframe>
