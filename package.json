@@ -1,7 +1,6 @@
 {
   "name": "foodprints-v1",
   "homepage": "https://esteban-munoz25.github.io/foodprints-v1/",
-  "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
