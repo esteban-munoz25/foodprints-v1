@@ -11,7 +11,7 @@ export default {
         sans: ["IBM Plex Sans", "system-ui", "sans-serif"],
       },
       spacing: {
-        '136': '136px',
+        136: "136px",
       },
     },
   },

@@ -131,8 +131,8 @@ const Carmen = () => {
   }, []);
 
   return (
-    <div className="px-136">
-      <Section className="hero-section text-white " ref={containerRef}>
+    <>
+      <Section className="hero-section text-white px-136" ref={containerRef}>
         {/* HERO SECTION  */}
         <div className="min-h-[150vh]">
           <div className="min-h-[100vh] flex flex-col justify-center items-center">
@@ -167,7 +167,7 @@ const Carmen = () => {
       </div>
 
       {/* PROGRESS BAR  */}
-      <Section>
+      <Section className="px-136">
         <div
           className="container"
           style={{
@@ -193,7 +193,7 @@ const Carmen = () => {
         </div>
 
       </Section>
-    </div>
+    </>
   );
 };
 

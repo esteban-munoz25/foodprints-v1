@@ -8,7 +8,7 @@ function Section({
   return (
   <div
     id={id}
-    className={`h-[100vh] w-full px-46 ${className || ''}`}
+    className={`h-[100vh] w-full ${className || ''}`}
   >
     {children}
   </div>
